@@ -46,15 +46,23 @@ The multinomial naïve Bayes classifier becomes a linear classifier when express
 
 where  ![7](https://bit.ly/32aakx4)  and  ![8](https://bit.ly/2OflVCW).
 
-### [Passive Aggressive Classifier](http://jmlr.csail.mit.edu/papers/volume7/crammer06a/crammer06a.pdf)
-The passive-aggressive algorithms are a family of algorithms for large-scale learning.
-Intuitively, passive signifies that if the classification is correct, we should keep the model, and, aggressive signifies that if the classification is incorrect, update the model to adjust to more misclassified examples. Unlike most others, it does not converge, rather it makes updates to correct the loss.
+### XGBoost Regressor
+
+XGBoost is an optimized distributed gradient boosting library designed to be highly efficient, flexible and portable. It implements machine learning algorithms under the Gradient Boosting framework. XGBoost provides a parallel tree boosting (also known as GBDT, GBM) that solve many data science problems in a fast and accurate way. The same code runs on major distributed environment (Hadoop, SGE, MPI) and can solve problems beyond billions of examples.
 
 ## Results
 
-The model outputs accuracy of ~97% which is decent enough. We have less than 1.5% false positive and false negative classification each. Check the confusion matrix and classification report below:
+The model outputs accuracy of ~81% using MultinomialNB Classifier where I had about 10% of test results classified False Possitively. 
 
-![](results.png)
+![Naive Bayes Result](multinomial.png)
+
+To reduce this, I then applied XGBoost Regressor and achieved accuracy upwards of 94%, which is decent enough. We have less than 2% false positive and 3.5% false negative classification.
+
+![XGBoost with Fasle Positive](xgboost_3pct.png)
+
+Upon restricting to classify for False Positive results, we achive a reduced accuracy of 88%.
+
+![XGBoost without False Positive](cgboost_nfp.png)
 
 ## Future Work
-I intend to expend this project by adding a graphical user interface (GUI) where one can paste any piece of text and get its classification in the results.
+I intend to expend this project by adding a graphical user interface (GUI) where one can connect their email inbox directly to the model and get their emails classified into different collections.
