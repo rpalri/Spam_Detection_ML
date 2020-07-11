@@ -62,7 +62,7 @@ To reduce this, I then applied XGBoost Regressor and achieved accuracy upwards o
 
 Upon restricting to classify for False Positive results, we achive a reduced accuracy of 88%.
 
-![XGBoost without False Positive](cgboost_nfp.png)
+![XGBoost without False Positive](xgboost_nfp.png)
 
 ## Future Work
 I intend to expend this project by adding a graphical user interface (GUI) where one can connect their email inbox directly to the model and get their emails classified into different collections.
